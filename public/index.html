@@ -2,8 +2,9 @@
 <html lang="pt">
 <head>
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
-
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+    
 
     <script>
     var firebaseConfig = {
@@ -22,7 +23,7 @@
 
     var db = firebase.firestore();
     </script>   
-    <meta charset="utf-8">
+    <meta charset="utf-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <!-- SEO Meta Tags -->
@@ -107,26 +108,2130 @@
 
     <script>
 
-        
-        
         db.collection("jobs").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
-                console.log(`${doc.id} => ${doc.data()}`);
+                document.body.innerHTML(`${doc.data()['company']}`);
             });
         });
     </script>
     <div id="vagas" class="features">
         <table>
             <tr>
+                <th>Empresa</th>
+                <th>Cidade</th>
+                <th>Departamento</th>
+                <th>Vaga</th>
+                <th>Data Captura</th>
+            </tr>
+            <tr>
                 <td>
-                    <span>Analista Contábil </span>
+                    <span>ewave</span>
                 </td>
                 <td>
-                    <span>Curitiba-PR</span>
+                    <span>Curitiba</span>
                 </td>
-                    <td><span>Efetivo</span>
+                <td>
+                    <span>Gestão de TI</span>
+                </td>
+                <td>
+                    <span>Analista de Projetos</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
                 </td>
             </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Folha de Pagamento</span>
+                </td>
+                <td>
+                    <span>Coordenador de Folha de Pagamento</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Tecnologia</span>
+                </td>
+                <td>
+                    <span>Tech Leader (e-commerce)</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Gestão de TI</span>
+                </td>
+                <td>
+                    <span>Analista de Telecomunicações</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Analista de Testes Automatizados</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Tecnologia</span>
+                </td>
+                <td>
+                    <span>UX Designer - Curitiba</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Brasília</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Analista de Banco de Dados</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Atendimento ao cliente</span>
+                </td>
+                <td>
+                    <span>Vem pra Contabilizei! - Banco de Talentos (Atendimento ao Cliente)</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>gupy</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Geral</span>
+                </td>
+                <td>
+                    <span>Especialista Customer Experience</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>solutis</span>
+                </td>
+                <td>
+                    <span>Não Especificado</span>
+                </td>
+                <td>
+                    <span>Contratos</span>
+                </td>
+                <td>
+                    <span>Banco de talentos</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>São Bernardo do Campo</span>
+                </td>
+                <td>
+                    <span>Gestão de TI</span>
+                </td>
+                <td>
+                    <span>Analista de Segurança da Informação</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor Backend pleno</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Tecnologia</span>
+                </td>
+                <td>
+                    <span>Analista DevOps</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Analista de Testes Automatizados Senior</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor Java Sênior</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Infraestrutura</span>
+                </td>
+                <td>
+                    <span>Suporte N1 Bilíngue</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor Full Stack Senior</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Infraestrutura e Suporte</span>
+                </td>
+                <td>
+                    <span>Analista de Suporte</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>Não Especificado</span>
+                </td>
+                <td>
+                    <span>Tecnologia</span>
+                </td>
+                <td>
+                    <span>Gerente de Devops</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>solutis</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Central de Serviços</span>
+                </td>
+                <td>
+                    <span>Analista RM - SP</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>solutis</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Contratos</span>
+                </td>
+                <td>
+                    <span>Consultor Funcional Salesforce (Banco de Talentos)</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Infraestrutura</span>
+                </td>
+                <td>
+                    <span>Analista de Suporte a Aplicações</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>São Caetano do Sul</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Analista de Qualidade de dados</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>solutis</span>
+                </td>
+                <td>
+                    <span>Salvador</span>
+                </td>
+                <td>
+                    <span>Contratos</span>
+                </td>
+                <td>
+                    <span>Analista de Tecnologia ( Banco de Dados) - SSA</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>gupy</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Geral</span>
+                </td>
+                <td>
+                    <span>Estágio em Customer Experience</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor Full Stack Backend Senior - Python</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Maringá</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor  PHP - Back End</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Comercial</span>
+                </td>
+                <td>
+                    <span>Gerente de Inside Sales Jr</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>solutis</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Contratos</span>
+                </td>
+                <td>
+                    <span>Analista de Testes (PL/SR)- SP</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor Frontend Especialista</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Não Especificado</span>
+                </td>
+                <td>
+                    <span>Infraestrutura</span>
+                </td>
+                <td>
+                    <span>DBA Weblogic-OBIEE - Sênior</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Atendimento ao cliente</span>
+                </td>
+                <td>
+                    <span>Assistente de Atendimento ao Cliente  - PCD ♿</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Atendimento ao cliente</span>
+                </td>
+                <td>
+                    <span>Aprendiz</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor Full Stack Backend Senior - Python</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Analista de Sistemas Sênior</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Analista de Incidentes Pleno</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>solutis</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Studio - SSA</span>
+                </td>
+                <td>
+                    <span>DEV Mobile Flutter  - (Banco de Talentos)</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>solutis</span>
+                </td>
+                <td>
+                    <span>Salvador</span>
+                </td>
+                <td>
+                    <span>Studio - SSA</span>
+                </td>
+                <td>
+                    <span>DEV Mobile React  - (Banco de Talentos)</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>gupy</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Geral</span>
+                </td>
+                <td>
+                    <span>Coordenador(a) Inside Sales</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Analista Funcional Pl.</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor .Net Senior</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Barueri</span>
+                </td>
+                <td>
+                    <span>Infraestrutura</span>
+                </td>
+                <td>
+                    <span>Engenheiro de Dados Pleno</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor PHP Pleno</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>São Caetano do Sul</span>
+                </td>
+                <td>
+                    <span>Gestão de TI</span>
+                </td>
+                <td>
+                    <span>Analista Governança de Dados</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>São Caetano do Sul</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Arquiteto de Aplicação .Net</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Analista Funcional Pleno</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor Net Sênior</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Não Especificado</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor Java Pleno</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>gupy</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Geral</span>
+                </td>
+                <td>
+                    <span>Executivo de Contas Enterprise</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Contabilidade</span>
+                </td>
+                <td>
+                    <span>Analista Contábil/Fiscal - Atendimento</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Gestão de TI</span>
+                </td>
+                <td>
+                    <span>Analista de Gestão de TI Jr.</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Não Especificado</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor Sênior</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>solutis</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Contratos</span>
+                </td>
+                <td>
+                    <span>Analista funcional Oracle - SP</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>solutis</span>
+                </td>
+                <td>
+                    <span>Salvador</span>
+                </td>
+                <td>
+                    <span>Studio - SSA</span>
+                </td>
+                <td>
+                    <span>Arquiteto de Software - SSA</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>gupy</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Geral</span>
+                </td>
+                <td>
+                    <span>Business Development Representative</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Marketing</span>
+                </td>
+                <td>
+                    <span>Analista de CRM</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Barueri</span>
+                </td>
+                <td>
+                    <span>Infraestrutura</span>
+                </td>
+                <td>
+                    <span>Engenheiro de Dados SR</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Contabilidade</span>
+                </td>
+                <td>
+                    <span>Coordenador de Operações</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Pessoas & Cultura</span>
+                </td>
+                <td>
+                    <span>Analista de Treinamento e Desenvolvimento Pleno</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>solutis</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Contratos</span>
+                </td>
+                <td>
+                    <span>DEV Mobile iOS - (Banco de Talentos)</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>DESENVOLVEDOR JAVA PLENO</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>solutis</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Bradesco</span>
+                </td>
+                <td>
+                    <span>Arquiteto de Automação de Testes - SP</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Jurídico</span>
+                </td>
+                <td>
+                    <span>Analista Jurídico</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Analista de Suporte Senior</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Auditoria e Compliance</span>
+                </td>
+                <td>
+                    <span>Gerente de Planejamento de Operação</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Contabilidade</span>
+                </td>
+                <td>
+                    <span>Gerente de Operações Contábeis</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>gupy</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Geral</span>
+                </td>
+                <td>
+                    <span>Executivo de Contas Field Sales</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>solutis</span>
+                </td>
+                <td>
+                    <span>Salvador</span>
+                </td>
+                <td>
+                    <span>Studio - SSA</span>
+                </td>
+                <td>
+                    <span>DEV Mobile  Android  - (Banco de Talentos)</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>solutis</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Contratos</span>
+                </td>
+                <td>
+                    <span>Scrum Master - SP</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Tecnologia</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor(a) Front-end  - Curitiba</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>gupy</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Geral</span>
+                </td>
+                <td>
+                    <span>Especialista de Contas a Pagar</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>solutis</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Bradesco</span>
+                </td>
+                <td>
+                    <span>Arquiteto de Dados - SP</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>São Caetano do Sul</span>
+                </td>
+                <td>
+                    <span>Infraestrutura</span>
+                </td>
+                <td>
+                    <span>Arquiteto/Analista de Dados Pleno</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Maringá</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Analista e Programador de Sistemas (Banco de dados)</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>gupy</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Geral</span>
+                </td>
+                <td>
+                    <span>Especialista de Conteúdo</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>solutis</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Contratos</span>
+                </td>
+                <td>
+                    <span>Analista de Integração (SR) - SP</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>gupy</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Geral</span>
+                </td>
+                <td>
+                    <span>Especialista Customer Success</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor Mobile Especialista</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Brasília</span>
+                </td>
+                <td>
+                    <span>Infraestrutura</span>
+                </td>
+                <td>
+                    <span>Analista de Infraestrutura Middleware (Remoto)</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor Backend Especialista</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Não Especificado</span>
+                </td>
+                <td>
+                    <span>Banco de Talentos</span>
+                </td>
+                <td>
+                    <span>Banco de Talentos - Não encontrou uma vaga no seu perfil? Cadastre-se aqui para futuras demandas.</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>solutis</span>
+                </td>
+                <td>
+                    <span>Salvador</span>
+                </td>
+                <td>
+                    <span>Gestão de Pessoas</span>
+                </td>
+                <td>
+                    <span>Analista de TI (PCD) - SSA/RJ/SP</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Gestão de TI</span>
+                </td>
+                <td>
+                    <span>Administrador Sales Force</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>DBA</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>São Caetano do Sul</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Arquiteto de Aplicação Java</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Barueri</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor Big Data Pleno</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Barueri</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor Full Stack</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor FullStack  Sr</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Atendimento ao cliente</span>
+                </td>
+                <td>
+                    <span>Assistente Administrativo - PCD ♿</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento .NET SR.</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>São Caetano do Sul</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Arquiteto de Aplicação .Net</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Contabilidade</span>
+                </td>
+                <td>
+                    <span>Analista Contábil</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>solutis</span>
+                </td>
+                <td>
+                    <span>Salvador</span>
+                </td>
+                <td>
+                    <span>Central de Serviços</span>
+                </td>
+                <td>
+                    <span>Líder de Service Desk - SSA</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Santo André</span>
+                </td>
+                <td>
+                    <span>Administrativo</span>
+                </td>
+                <td>
+                    <span>Assistente Administrativo TI</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>solutis</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Contratos</span>
+                </td>
+                <td>
+                    <span>Analista Front-end (SR) - SP</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Não Especificado</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor C# Pleno</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor Mobile</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>solutis</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Bradesco</span>
+                </td>
+                <td>
+                    <span>Consultor/Arquiteto Powercenter - SP</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>São Caetano do Sul</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Arquiteto de Aplicação .Net</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Tecnologia</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor(a) Back-end Júnior - Curitiba</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Software</span>
+                </td>
+                <td>
+                    <span>Especialista - IBM Integration Bus</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>solutis</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Bradesco</span>
+                </td>
+                <td>
+                    <span>Arquiteto de Performance - SP</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Maringá</span>
+                </td>
+                <td>
+                    <span>Gestão de TI</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor Mobile</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>gupy</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Geral</span>
+                </td>
+                <td>
+                    <span>Executivo de Contas Parcerias</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Gestão de TI</span>
+                </td>
+                <td>
+                    <span>Gerente de Projetos</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>gupy</span>
+                </td>
+                <td>
+                    <span>São Paulo</span>
+                </td>
+                <td>
+                    <span>Geral</span>
+                </td>
+                <td>
+                    <span>Key Account Manager</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Tecnologia</span>
+                </td>
+                <td>
+                    <span>Vem pra Contabilizei! - Banco de Talentos (Contábil/Fiscal)</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>contabilizei</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Pessoas & Cultura</span>
+                </td>
+                <td>
+                    <span>Gerente de Atração e Seleção</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Curitiba</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Desenvolvedor Java Pleno</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>Não Especificado</span>
+                </td>
+                <td>
+                    <span>Desenvolvimento de Sistemas</span>
+                </td>
+                <td>
+                    <span>Arquiteto de Sistemas</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
+            <tr>
+                <td>
+                    <span>ewave</span>
+                </td>
+                <td>
+                    <span>São Caetano do Sul</span>
+                </td>
+                <td>
+                    <span>Gestão de TI</span>
+                </td>
+                <td>
+                    <span>Analista Governança de Dados</span>
+                </td>
+                <td>
+                    <span>2020-05-16</span>
+                </td>
+            </tr>
+    
+
         </table>
     </div>
 
