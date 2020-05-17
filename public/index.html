@@ -2,8 +2,9 @@
 <html lang="pt">
 <head>
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+    <!--<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>-->
     
 
     <script>
@@ -21,22 +22,24 @@
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
 
-    var db = firebase.firestore();
+    
+
+    //var db = firebase.firestore();
     </script>   
     <meta charset="utf-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="O trampo.io é site de serviços gratuitos centraliza vagas de tecnologia nas melhores empresas. Felicidade.">
+    <meta name="description" content="O trampo.io é um site de serviços gratuitos de busca de vagas e trampos de tecnologia nas melhores empresa e startups.">
     <meta name="author" content="trampo.io">
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-	<meta property="og:trampo.io" content="" /> <!-- website name -->
-	<meta property="og:trampo.io" content="" /> <!-- website link -->
-	<meta property="og:Melhores " content=""/> <!-- title shown in the actual shared post -->
-	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:trampo.io" content="trampo.io" /> <!-- website name -->
+	<meta property="og:trampo.io" content="trampo.io" /> <!-- website link -->
+	<meta property="og:Melhores " content="O trampo.io é um site de serviços gratuitos de busca de vagas e trampos de tecnologia nas melhores empresa e startups."/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="O trampo.io é um site de serviços gratuitos de busca de vagas e trampos de tecnologia nas melhores empresa e startups." /> <!-- description shown in the actual shared post -->
 	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
-	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:url" content="trampo.io" /> <!-- where do you want your post to link to -->
 	<meta property="og:type" content="article" />
 
     <title>trampo.io</title>
@@ -105,15 +108,16 @@
         </div>
     </header>
     <svg class="header-frame" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1920 310"><defs><style>.cls-1{fill:#5f4def;}</style></defs><title>header-frame</title><path class="cls-1" d="M0,283.054c22.75,12.98,53.1,15.2,70.635,14.808,92.115-2.077,238.3-79.9,354.895-79.938,59.97-.019,106.17,18.059,141.58,34,47.778,21.511,47.778,21.511,90,38.938,28.418,11.731,85.344,26.169,152.992,17.971,68.127-8.255,115.933-34.963,166.492-67.393,37.467-24.032,148.6-112.008,171.753-127.963,27.951-19.26,87.771-81.155,180.71-89.341,72.016-6.343,105.479,12.388,157.434,35.467,69.73,30.976,168.93,92.28,256.514,89.405,100.992-3.315,140.276-41.7,177-64.9V0.24H0V283.054Z"/></svg>
-
+<!--
     <script>
 
-        db.collection("jobs").get().then((querySnapshot) => {
+        db.collection("companys").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
-                document.body.innerHTML(`${doc.data()['company']}`);
+                console.log(`${doc.data()['company']}`);
             });
         });
     </script>
+-->
     <div id="vagas" class="features">
         <table>
             <tr>
