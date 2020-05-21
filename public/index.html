@@ -11,10 +11,10 @@
     gtag('config', 'UA-84397247-4');
     </script>
 
-    <!--
+
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
     
-    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>-->
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
     
@@ -31,10 +31,9 @@
         measurementId: "G-GD26QW7K52"
     };
 
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-    //var db = firebase.firestore();
-    -->
+    //firebase.initializeApp(firebaseConfig);
+    //1firebase.analytics();
+    var db = firebase.firestore();
 
     
     </script>   
@@ -119,16 +118,18 @@
             </div>
         </div>
     </header>
-<!--
     <script>
 
-        db.collection("companys").get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                console.log(`${doc.data()['company']}`);
-            });
-        });
+        //db.collection("companys").get().then((querySnapshot) => {
+         //   querySnapshot.forEach((doc) => {
+         //       console.log(`${doc.data()['company']}`);
+         //   });
+        //});
+        $(ender add domready).ready(function () {
+            alert('sasdad')
+        $('body').html('<p>boosh</p>')
+        })
     </script>
--->
 <br>
     <div id="vagas" class="features">          
           <table class="table">
