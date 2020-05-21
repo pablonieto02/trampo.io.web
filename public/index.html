@@ -4,37 +4,33 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84397247-4"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-    gtag('config', 'UA-84397247-4');
+        gtag('config', 'UA-84397247-4');
     </script>
-    <script src="https://raw.githubusercontent.com/ded/domready/master/ready.min.js"></script>
+    <script src="js/domready.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
-    
     <!-- <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>-->
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
-    
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>    
 
     <script>
-    var firebaseConfig = {
-        apiKey: "AIzaSyAQXmeCeLpTe7oPqKsUtKyeqr_CsbRmvFo",
-        authDomain: "apptrampo.firebaseapp.com",
-        databaseURL: "https://apptrampo.firebaseio.com",
-        projectId: "apptrampo",
-        storageBucket: "apptrampo.appspot.com",
-        messagingSenderId: "65041873281",
-        appId: "1:65041873281:web:fe40d1c39568863e8c9080",
-        measurementId: "G-GD26QW7K52"
-    };
+        var firebaseConfig = {
+            apiKey: "AIzaSyAQXmeCeLpTe7oPqKsUtKyeqr_CsbRmvFo",
+            authDomain: "apptrampo.firebaseapp.com",
+            databaseURL: "https://apptrampo.firebaseio.com",
+            projectId: "apptrampo",
+            storageBucket: "apptrampo.appspot.com",
+            messagingSenderId: "65041873281",
+            appId: "1:65041873281:web:fe40d1c39568863e8c9080",
+            measurementId: "G-GD26QW7K52"
+        };
 
-    firebase.initializeApp(firebaseConfig);
-    //1firebase.analytics();
-    var db = firebase.firestore();
-
-    
+        firebase.initializeApp(firebaseConfig);
+        //1firebase.analytics();
+        var db = firebase.firestore();
     </script>   
     <meta charset="utf-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -118,49 +114,54 @@
         </div>
     </header>
     <script>
+        //db.collection("companys").get().then((querySnapshot) => {
+         //  querySnapshot.forEach((doc) => {
+          //     console.log(`${doc.data()['company']}`);
+          // });
+        //});
 
-        db.collection("companys").get().then((querySnapshot) => {
-           querySnapshot.forEach((doc) => {
-               console.log(`${doc.data()['companys']}`);
-           });
-        });
+        domready(function () {
+            db.collection('jobs').get().then((snapshot) => {
+                snapshot.docs.forEach(doc => {
+                    renderAccount(doc);
+                })
+            })
 
-        $(document).ready(function () {
-            $('body').html('<p>boosh</p>')
+            const accountList = document.querySelector('#tbl_account_list') ;
+            function renderAccount(doc){
+                let tr = document.createElement('tr');
+                let td_company = document.createElement('td');
+                let td_workplace = document.createElement('td');
+                let td_department = document.createElement('td');
+                let td_job = document.createElement('td')
+
+                //tr.setAttribute('data-id', doc.id);
+                td_company.textContent = doc.data().company;
+                td_workplace.textContent = doc.data().workplace;
+                td_department.textContent = doc.data().department;
+                td_job.textContent = doc.data().job;
+
+                tr.appendChild(td_company);
+                tr.appendChild(td_workplace);
+                tr.appendChild(td_department);
+                tr.appendChild(td_job);
+
+                accountList.appendChild(tr);
+
+            }
         })
     </script>
-<br>
-    <div id="vagas" class="features">          
-          <table class="table">
+    <div id="vagas" class="features">
+          <table id="tbl_account_list" class="table">
             <thead class="thead-light">
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Empresa</th>
+                <th scope="col">Local</th>
+                <th scope="col">Departament</th>
+                <th scope="col">Descrição da Vaga</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
+            
     </div>
 
 	<div id="details-lightbox-3" class="lightbox-basic zoom-anim-dialog mfp-hide">
@@ -259,5 +260,6 @@
     <script src="js/jquery.magnific-popup.js"></script>
     <script src="js/validator.min.js"></script>
     <script src="js/scripts.js"></script>
+    
 </body>
 </html>
