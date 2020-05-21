@@ -10,8 +10,7 @@
 
     gtag('config', 'UA-84397247-4');
     </script>
-
-
+    <script src="https://raw.githubusercontent.com/ded/domready/master/ready.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
     
     <!-- <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>-->
@@ -31,7 +30,7 @@
         measurementId: "G-GD26QW7K52"
     };
 
-    //firebase.initializeApp(firebaseConfig);
+    firebase.initializeApp(firebaseConfig);
     //1firebase.analytics();
     var db = firebase.firestore();
 
@@ -120,14 +119,14 @@
     </header>
     <script>
 
-        //db.collection("companys").get().then((querySnapshot) => {
-         //   querySnapshot.forEach((doc) => {
-         //       console.log(`${doc.data()['company']}`);
-         //   });
-        //});
-        $(ender add domready).ready(function () {
-            alert('sasdad')
-        $('body').html('<p>boosh</p>')
+        db.collection("companys").get().then((querySnapshot) => {
+           querySnapshot.forEach((doc) => {
+               console.log(`${doc.data()['companys']}`);
+           });
+        });
+
+        $(document).ready(function () {
+            $('body').html('<p>boosh</p>')
         })
     </script>
 <br>
