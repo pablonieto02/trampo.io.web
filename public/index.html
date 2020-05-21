@@ -1,7 +1,6 @@
 <!DOCTYPE html>    
 <html lang="pt">
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84397247-4"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -12,7 +11,6 @@
     </script>
     <script src="js/domready.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
-    <!-- <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>-->
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>    
 
@@ -29,23 +27,20 @@
         };
 
         firebase.initializeApp(firebaseConfig);
-        //1firebase.analytics();
         var db = firebase.firestore();
     </script>   
     <meta charset="utf-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <!-- SEO Meta Tags -->
     <meta name="description" content="O trampo.io é um site de serviços gratuitos de busca de vagas e trampos de tecnologia nas melhores empresa e startups.">
     <meta name="author" content="trampo.io">
 
-    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-	<meta property="og:trampo.io" content="trampo.io" /> <!-- website name -->
-	<meta property="og:trampo.io" content="trampo.io" /> <!-- website link -->
+	<meta property="og:trampo.io" content="trampo.io" />
+	<meta property="og:trampo.io" content="trampo.io" />
 	<meta property="og:Melhores " content="O trampo.io é um site de serviços gratuitos de busca de vagas e trampos de tecnologia nas melhores empresa e startups."/> <!-- title shown in the actual shared post -->
 	<meta property="og:description" content="O trampo.io é um site de serviços gratuitos de busca de vagas e trampos de tecnologia nas melhores empresa e startups." /> <!-- description shown in the actual shared post -->
-	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
-	<meta property="og:url" content="trampo.io" /> <!-- where do you want your post to link to -->
+	<meta property="og:image" content="" />
+	<meta property="og:url" content="trampo.io" />
 	<meta property="og:type" content="article" />
 
     <title>trampo.io</title>
@@ -71,9 +66,6 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <div class="container">
-
-            <!--<a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a> -->
-            
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-awesome fas fa-bars"></span>
                 <span class="navbar-toggler-awesome fas fa-times"></span>
@@ -102,66 +94,68 @@
                             <a class="btn-solid-lg page-scroll" href="#vagas">Encontrar Vagas</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-xl-7">
-                        <div class="image-container">
-                            <div class="img-wrapper">
-                                <!--<img class="img-fluid" src="images/header-software-app.png" alt="alternative">-->
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </header>
     <script>
-        //db.collection("companys").get().then((querySnapshot) => {
-         //  querySnapshot.forEach((doc) => {
-          //     console.log(`${doc.data()['company']}`);
-          // });
-        //});
-
         domready(function () {
-            db.collection('jobs').get().then((snapshot) => {
+            db.collection('jobs').orderBy("company").get().then((snapshot) => {
                 snapshot.docs.forEach(doc => {
                     renderAccount(doc);
                 })
             })
 
-            const accountList = document.querySelector('#tbl_account_list') ;
+            const accountList = document.querySelector('#tbl_jobs_list') ;
             function renderAccount(doc){
                 let tr = document.createElement('tr');
                 let td_company = document.createElement('td');
-                let td_workplace = document.createElement('td');
-                let td_department = document.createElement('td');
                 let td_job = document.createElement('td')
 
-                //tr.setAttribute('data-id', doc.id);
+                tr.setAttribute('data-workplace', doc.data().workplace);
+                tr.setAttribute('data-department', doc.data().department);
+
                 td_company.textContent = doc.data().company;
-                td_workplace.textContent = doc.data().workplace;
-                td_department.textContent = doc.data().department;
                 td_job.textContent = doc.data().job;
 
                 tr.appendChild(td_company);
-                tr.appendChild(td_workplace);
-                tr.appendChild(td_department);
                 tr.appendChild(td_job);
 
                 accountList.appendChild(tr);
-
             }
         })
     </script>
-    <div id="vagas" class="features">
-          <table id="tbl_account_list" class="table">
+    <div>
+        <label>Local de trabalho</label>
+        <select class="filter" id="filter-workplace">
+        <option value="">Todos</option>
+            <option value="Curitiba">Curitiba</option>
+            <option value="São Paulo">São Paulo</option>
+            <option value="Salvador">Salvador</option>
+        </select>
+    </div>
+    <div>
+        <label>Área</label>
+        <select class="filter" id="filter-department">
+          <option value="">Todos</option>
+            <option value="Atendimento ao cliente">Atendimento ao cliente</option>
+            <option value="Auditoria e Compliance">Auditoria e Compliance</option>
+            <option value="Comercial">Comercial</option>
+            <option value="Contabilidade">Contabilidade</option>
+            <option value="Folha de Pagamento">Folha de Pagamento</option>
+            <option value="Infraestrutura e Suporte">Infraestrutura e Suporte</option>
+            <option value="Jurídico">Jurídico</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Pessoas &amp; Cultura">Pessoas &amp; Cultura</option>
+            <option value="Tecnologia">Tecnologia</option>
+        </select>
+      </div>
+
+    <div id="vagas" class="job-list jobs-to-filter features">
+          <table id="tbl_jobs_list" class="table">
             <thead class="thead-light">
-              <tr>
-                <th scope="col">Empresa</th>
-                <th scope="col">Local</th>
-                <th scope="col">Departament</th>
-                <th scope="col">Descrição da Vaga</th>
-              </tr>
             </thead>
-            
+        </table>            
     </div>
 
 	<div id="details-lightbox-3" class="lightbox-basic zoom-anim-dialog mfp-hide">
@@ -260,6 +254,35 @@
     <script src="js/jquery.magnific-popup.js"></script>
     <script src="js/validator.min.js"></script>
     <script src="js/scripts.js"></script>
+    <script>
+        document.querySelectorAll('.filter').forEach(function(element) {
+            
+            element.onchange = function() {
+                $('.jobs-to-filter tr').hide();
+                var currentValue = this.value;
+
+                // var filterTypeValue = document.querySelector('#filter-type').value;
+                var filterWorkplaceValue = document.querySelector('#filter-workplace').value;
+                var filterDeparmentValue = document.querySelector('#filter-department').value;
+
+                var selector = '.jobs-to-filter tr';
+
+                //if (filterTypeValue !== '') {
+                //    selector += '[data-type="' + filterTypeValue + '"]'
+                // }
+
+                if (filterWorkplaceValue !== '') {
+                    selector += '[data-workplace="' + filterWorkplaceValue + '"]'
+                }
+
+                if (filterDeparmentValue !== '') {
+                    selector += '[data-department="' + filterDeparmentValue + '"]'
+                }
+
+                $(selector).show();
+            }
+        });
+    </script>
     
 </body>
 </html>
